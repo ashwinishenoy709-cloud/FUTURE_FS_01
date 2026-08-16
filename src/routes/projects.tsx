@@ -26,7 +26,7 @@ export const Route = createFileRoute("/projects")({
       },
     ],
   }),
-  component: Projects;
+  component: Projects,
 });
 
 function Projects() {
