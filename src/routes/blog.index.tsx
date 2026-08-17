@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { PageShell } from "@/components/page-shell";
 import { blogPosts, formatPostDate } from "@/data/blog";
 
-export const Route = createFileRoute("/blog")({
+export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
       { title: "Blog — Ashwini Shenoy" },
