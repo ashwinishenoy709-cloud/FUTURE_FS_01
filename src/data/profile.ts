@@ -48,7 +48,7 @@ export const projects: Project[] = [
     stack: ["HTML5", "CSS3", "JavaScript", "DOM APIs", "Local Storage"],
     highlights: [
       "Built a responsive Netflix-inspired streaming app with authentication UI, profile selection, dynamic content rows and an auto-rotating hero banner.",
-      "Implemented live search, genre filtering, title detail modals and a persistent \"My List\" watchlist using DOM manipulation, event handling and Local Storage.",
+      'Implemented live search, genre filtering, title detail modals and a persistent "My List" watchlist using DOM manipulation, event handling and Local Storage.',
       "Optimised for cross-browser compatibility and responsive layouts across desktop and mobile.",
     ],
     link: "https://github.com/ashwinishenoy709-cloud",

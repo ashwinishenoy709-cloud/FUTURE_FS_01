@@ -12,7 +12,10 @@ export const Route = createFileRoute("/blog/$slug")({
   head: ({ loaderData }) => {
     if (!loaderData) {
       return {
-        meta: [{ title: "Post not found — Ashwini Shenoy" }, { name: "robots", content: "noindex" }],
+        meta: [
+          { title: "Post not found — Ashwini Shenoy" },
+          { name: "robots", content: "noindex" },
+        ],
       };
     }
     const { post } = loaderData;
@@ -85,10 +88,7 @@ function BlogPostPage() {
       <article className="mt-10 space-y-5">
         {post.body.map((block) =>
           block.startsWith("## ") ? (
-            <h2
-              key={block}
-              className="pt-4 font-display text-xl font-semibold text-foreground"
-            >
+            <h2 key={block} className="pt-4 font-display text-xl font-semibold text-foreground">
               {block.slice(3)}
             </h2>
           ) : (

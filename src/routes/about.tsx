@@ -44,10 +44,14 @@ function About() {
                 <GraduationCap className="size-5" aria-hidden />
               </span>
               <div>
-                <h3 className="font-display text-lg font-semibold text-foreground">{item.degree}</h3>
+                <h3 className="font-display text-lg font-semibold text-foreground">
+                  {item.degree}
+                </h3>
                 <p className="mt-1 text-sm text-muted-foreground">{item.school}</p>
                 <p className="mt-3 flex flex-wrap gap-2 text-xs font-medium">
-                  <span className="rounded-full bg-ice px-3 py-1 text-foreground">{item.period}</span>
+                  <span className="rounded-full bg-ice px-3 py-1 text-foreground">
+                    {item.period}
+                  </span>
                   <span className="rounded-full bg-peach px-3 py-1 text-peach-foreground">
                     {item.detail}
                   </span>

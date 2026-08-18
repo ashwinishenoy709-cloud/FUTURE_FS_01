@@ -23,7 +23,7 @@ export const blogPosts: BlogPost[] = [
       "## Starting with the signals",
       "The first version relied only on blacklist and whitelist checks. It worked for known bad domains, but it was useless against fresh phishing pages that had never been reported. So I added heuristics: SSL certificate age and issuer, unusual URL length, suspicious character substitutions, subdomain depth, and whether the visible brand name matched the registered domain.",
       "## Making the score explainable",
-      "Instead of a single opaque number, every signal contributes a weighted line item. The popup lists them — \"certificate issued 2 days ago\", \"domain contains a look-alike character\" — and the total decides whether the page is safe, suspicious, or dangerous. Debugging became far easier too, because a wrong verdict points straight at the signal that misfired.",
+      'Instead of a single opaque number, every signal contributes a weighted line item. The popup lists them — "certificate issued 2 days ago", "domain contains a look-alike character" — and the total decides whether the page is safe, suspicious, or dangerous. Debugging became far easier too, because a wrong verdict points straight at the signal that misfired.',
       "## Keeping browsing fast",
       "Integrating the Google Safe Browsing API gave a strong baseline, but network calls on every navigation are expensive. I cached verdicts per origin for the session and ran the local heuristics first, only reaching for the API when the local score landed in the uncertain middle band.",
       "## What I'd do next",

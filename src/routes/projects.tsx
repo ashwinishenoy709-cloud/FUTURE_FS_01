@@ -40,7 +40,9 @@ function Projects() {
         <article key={project.slug} className="surface-card p-6 sm:p-8">
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
-              <h2 className="font-display text-2xl font-semibold text-foreground">{project.title}</h2>
+              <h2 className="font-display text-2xl font-semibold text-foreground">
+                {project.title}
+              </h2>
               <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground">
                 {project.tagline}
               </p>
@@ -69,7 +71,10 @@ function Projects() {
 
           <ul className="mt-6 space-y-3">
             {project.highlights.map((highlight) => (
-              <li key={highlight} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
+              <li
+                key={highlight}
+                className="flex gap-3 text-sm leading-relaxed text-muted-foreground"
+              >
                 <span aria-hidden className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
                 {highlight}
               </li>

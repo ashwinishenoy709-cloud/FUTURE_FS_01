@@ -16,8 +16,7 @@ export const Route = createFileRoute("/blog/")({
       { property: "og:title", content: "Blog — Ashwini Shenoy" },
       {
         property: "og:description",
-        content:
-          "Notes on web development, cybersecurity and hackathons by Ashwini Shenoy.",
+        content: "Notes on web development, cybersecurity and hackathons by Ashwini Shenoy.",
       },
     ],
   }),

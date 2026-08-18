@@ -83,7 +83,9 @@ function Resume() {
                 aria-hidden
                 className="absolute -left-[1.9rem] top-1.5 size-3 rounded-full border-2 border-card bg-primary"
               />
-              <h3 className="font-display text-lg font-semibold text-foreground">{project.title}</h3>
+              <h3 className="font-display text-lg font-semibold text-foreground">
+                {project.title}
+              </h3>
               <p className="mt-1 text-xs font-medium text-primary">{project.stack.join(" · ")}</p>
               <ul className="mt-3 space-y-2">
                 {project.highlights.map((highlight) => (
