@@ -49,10 +49,10 @@ export function SiteHeader() {
           <button
             type="button"
             onClick={() => setOpen((value) => !value)}
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          className="inline-flex size-10 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:bg-secondary md:hidden"
-        >
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            className="inline-flex size-10 items-center justify-center rounded-full border border-border text-foreground transition-colors hover:bg-secondary md:hidden"
+          >
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
         </div>
@@ -64,7 +64,10 @@ export function SiteHeader() {
           open ? "max-h-72" : "max-h-0",
         )}
       >
-        <nav className="mx-auto flex max-w-5xl flex-col gap-1 px-5 py-3" aria-label="Mobile navigation">
+        <nav
+          className="mx-auto flex max-w-5xl flex-col gap-1 px-5 py-3"
+          aria-label="Mobile navigation"
+        >
           {navItems.map((item) => (
             <Link
               key={item.to}
