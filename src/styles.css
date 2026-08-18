@@ -4,12 +4,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/*
- * Design system: soft pastel portfolio palette.
- * Pale ice blue base, dusty periwinkle primary, blush pink accents.
- * All colors are oklch and exposed as semantic tokens.
- */
-
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -119,9 +113,10 @@
   --sidebar-border: oklch(0.885 0.014 265);
   --sidebar-ring: oklch(0.752 0.036 279);
 
-  --shadow-soft: 0 1px 2px oklch(0.66 0.055 279 / 0.06), 0 8px 24px -12px oklch(0.66 0.055 279 / 0.2);
-  --shadow-lifted: 0 2px 4px oklch(0.66 0.055 279 / 0.08),
-    0 18px 40px -18px oklch(0.66 0.055 279 / 0.3);
+  --shadow-soft:
+    0 1px 2px oklch(0.66 0.055 279 / 0.06), 0 8px 24px -12px oklch(0.66 0.055 279 / 0.2);
+  --shadow-lifted:
+    0 2px 4px oklch(0.66 0.055 279 / 0.08), 0 18px 40px -18px oklch(0.66 0.055 279 / 0.3);
 }
 
 .dark {
@@ -189,4 +184,139 @@
 
 @utility text-balance-tight {
   text-wrap: balance;
+}
+
+/* =========================================
+   PORTFOLIO GEOMETRIC BACKGROUND
+========================================= */
+
+:root {
+  --poly-light-1: #e6f0ff;
+  --poly-light-2: #c8dcf4;
+  --poly-light-3: #c6c9f5;
+  --poly-light-4: #e9edf4;
+  --poly-light-5: #f4d7e3;
+  --poly-light-6: #ffe3d1;
+}
+
+.bg-poly {
+  position: relative;
+  min-height: 100vh;
+  isolation: isolate;
+
+  background:
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 18%,
+      rgba(198, 214, 255, 0.55) 18%,
+      rgba(198, 214, 255, 0.55) 35%,
+      transparent 35%
+    ),
+    linear-gradient(
+      45deg,
+      transparent 0%,
+      transparent 25%,
+      rgba(244, 215, 227, 0.5) 25%,
+      rgba(244, 215, 227, 0.5) 48%,
+      transparent 48%
+    ),
+    linear-gradient(
+      155deg,
+      transparent 0%,
+      transparent 30%,
+      rgba(200, 220, 244, 0.55) 30%,
+      rgba(200, 220, 244, 0.55) 52%,
+      transparent 52%
+    ),
+    linear-gradient(
+      25deg,
+      transparent 0%,
+      transparent 45%,
+      rgba(255, 227, 209, 0.5) 45%,
+      rgba(255, 227, 209, 0.5) 65%,
+      transparent 65%
+    ),
+    linear-gradient(
+      120deg,
+      var(--poly-light-1),
+      var(--poly-light-4) 45%,
+      var(--poly-light-6)
+    );
+
+  background-size:
+    700px 500px,
+    850px 600px,
+    900px 650px,
+    750px 550px,
+    100% 100%;
+
+  background-position:
+    top left,
+    top right,
+    center left,
+    bottom right,
+    center;
+
+  background-attachment: fixed;
+}
+
+/* Dark mode */
+
+.dark .bg-poly {
+  background:
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 20%,
+      rgba(125, 211, 252, 0.12) 20%,
+      rgba(125, 211, 252, 0.12) 38%,
+      transparent 38%
+    ),
+    linear-gradient(
+      45deg,
+      transparent 0%,
+      transparent 25%,
+      rgba(249, 168, 212, 0.1) 25%,
+      rgba(249, 168, 212, 0.1) 45%,
+      transparent 45%
+    ),
+    linear-gradient(
+      155deg,
+      transparent 0%,
+      transparent 30%,
+      rgba(165, 180, 252, 0.12) 30%,
+      rgba(165, 180, 252, 0.12) 55%,
+      transparent 55%
+    ),
+    linear-gradient(
+      25deg,
+      transparent 0%,
+      transparent 45%,
+      rgba(125, 211, 252, 0.08) 45%,
+      rgba(125, 211, 252, 0.08) 65%,
+      transparent 65%
+    ),
+    linear-gradient(
+      135deg,
+      #0d1320,
+      #0f172a 45%,
+      #1e293b
+    );
+
+  background-size:
+    700px 500px,
+    850px 600px,
+    900px 650px,
+    750px 550px,
+    100% 100%;
+
+  background-position:
+    top left,
+    top right,
+    center left,
+    bottom right,
+    center;
+
+  background-attachment: fixed;
 }
