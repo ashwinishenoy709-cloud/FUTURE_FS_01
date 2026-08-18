@@ -184,7 +184,9 @@ function Home() {
         <div className="mt-6 grid gap-5 sm:grid-cols-2">
           {projects.map((project) => (
             <article key={project.slug} className="surface-card flex flex-col gap-4 p-6">
-              <h3 className="font-display text-lg font-semibold text-foreground">{project.title}</h3>
+              <h3 className="font-display text-lg font-semibold text-foreground">
+                {project.title}
+              </h3>
               <p className="text-sm leading-relaxed text-muted-foreground">{project.tagline}</p>
               <ul className="mt-auto flex flex-wrap gap-2">
                 {project.stack.slice(0, 4).map((tech) => (

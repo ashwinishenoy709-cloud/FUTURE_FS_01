@@ -74,9 +74,8 @@ function Contact() {
   function field(key: keyof ContactInput) {
     return {
       value: form[key],
-      onChange: (
-        event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-      ) => setForm((current) => ({ ...current, [key]: event.target.value })),
+      onChange: (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+        setForm((current) => ({ ...current, [key]: event.target.value })),
       "aria-invalid": Boolean(errors[key]),
       className:
         "mt-2 w-full rounded-xl border border-input bg-background px-4 py-2.5 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-ring focus:ring-2 focus:ring-ring/40 aria-invalid:border-destructive",
@@ -96,7 +95,13 @@ function Contact() {
               <label htmlFor="name" className="text-sm font-medium text-foreground">
                 Your name
               </label>
-              <input id="name" type="text" placeholder="Jane Doe" maxLength={100} {...field("name")} />
+              <input
+                id="name"
+                type="text"
+                placeholder="Jane Doe"
+                maxLength={100}
+                {...field("name")}
+              />
               {errors.name ? (
                 <p className="mt-1.5 text-xs text-destructive">{errors.name}</p>
               ) : null}
@@ -125,7 +130,7 @@ function Contact() {
             <input
               id="subject"
               type="text"
-              placeholder="Internship opportunity"
+              placeholder="Subject"
               maxLength={150}
               {...field("subject")}
             />
