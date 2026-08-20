@@ -60,7 +60,7 @@ function Home() {
 
         <div className="relative">
           <span className="inline-flex items-center gap-2 rounded-full bg-peach px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-peach-foreground">
-            Open to internships
+            Hello, My name is 
           </span>
           <h1 className="mt-6 font-display text-4xl font-semibold text-balance-tight text-foreground sm:text-6xl">
             {profile.name}
@@ -145,7 +145,7 @@ function Home() {
 
       <section className="mt-16">
         <h2 className="font-display text-xl font-semibold text-foreground sm:text-2xl">
-          What I work with
+          TECHNICAL SKILLS
         </h2>
         <div className="mt-6 grid gap-5 sm:grid-cols-3">
           {skillGroups.map((group) => (
@@ -171,7 +171,7 @@ function Home() {
       <section className="mt-16">
         <div className="flex flex-wrap items-end justify-between gap-3">
           <h2 className="font-display text-xl font-semibold text-foreground sm:text-2xl">
-            Selected projects
+            PROJECTS
           </h2>
           <Link
             to="/projects"

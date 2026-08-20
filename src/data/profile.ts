@@ -11,11 +11,15 @@ export const profile = {
 };
 
 export const skillGroups = [
-  { label: "Languages", items: ["C", "Python", "Java", "JavaScript"] },
-  { label: "Frontend", items: ["HTML5", "CSS3", "JavaScript", "Responsive Design"] },
+  { label: "Languages", items: ["C", "Python", "C++", "Java", "JavaScript"] },
+  { label: "Frontend", items: ["HTML5", "CSS3", "JavaScript", "Responsive Web Design"] },
   {
     label: "Developer Tools",
     items: ["VS Code", "Git", "GitHub", "Eclipse", "Jupyter Notebook", "IntelliJ IDEA"],
+  },
+  {
+    label: "Databases & Backend Services",
+    items: ["MongoDB", "MySQL", "Supabase" ],
   },
 ];
 
