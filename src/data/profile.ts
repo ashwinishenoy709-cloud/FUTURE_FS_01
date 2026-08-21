@@ -7,7 +7,7 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/ashwinishenoy09",
   github: "https://github.com/ashwinishenoy709-cloud",
   summary:
-    "Computer Science undergraduate with hands-on experience building responsive web applications and browser extensions using HTML, CSS, JavaScript and Python. I have shipped projects across web development and cybersecurity, strengthening my problem-solving and software development skills — and I am eager to keep growing as a software developer.",
+    "Computer Science undergraduate with hands-on experience building responsive web applications and browser extensions using HTML, CSS, JavaScript, Python, React, and Node.js. I have worked on projects across web development and cybersecurity, including ClickDefender, a phishing detection Chrome extension, and a Netflix-inspired streaming application with search, filtering, and persistent watchlist functionality. These projects have strengthened my problem-solving, software development, DOM manipulation, and API integration skills. I am eager to continue learning, building practical solutions, and growing as a software developer.",
 };
 
 export const skillGroups = [
@@ -19,7 +19,7 @@ export const skillGroups = [
   },
   {
     label: "Databases & Backend Services",
-    items: ["MongoDB", "MySQL", "Supabase" ],
+    items: ["MongoDB", "MySQL", "Supabase"],
   },
 ];
 
@@ -69,8 +69,18 @@ export const education = [
 ];
 
 export const certifications = [
-  { title: "Python Programming", issuer: "Turbosoft Computer Academy", year: "2023" },
-  { title: "C Programming", issuer: "Turbosoft Computer Academy", year: "2024" },
+  {
+    title: "Python Programming",
+    issuer: "Turbosoft Computer Academy",
+    year: "2023",
+    image: "/certificates/python-programming.png",
+  },
+  {
+    title: "C Programming",
+    issuer: "Turbosoft Computer Academy",
+    year: "2024",
+    image: "/certificates/c-programming.png",
+  },
 ];
 
 export const achievements = [
