@@ -1,7 +1,6 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Download, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
-
-import { achievements, profile, projects, resumeUrl, skillGroups } from "@/data/profile";
+import { profile, projects, resumeUrl, skillGroups } from "@/data/profile";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -60,16 +59,12 @@ function Home() {
 
         <div className="relative">
           <span className="inline-flex items-center gap-2 rounded-full bg-peach px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-peach-foreground">
-            Hello, My name is 
+            Hello, My name is
           </span>
           <h1 className="mt-6 font-display text-4xl font-semibold text-balance-tight text-foreground sm:text-6xl">
             {profile.name}
           </h1>
           <p className="mt-4 font-display text-lg text-primary sm:text-xl">{profile.headline}</p>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">
-            {profile.summary}
-          </p>
-
           <div className="mt-9 flex flex-wrap gap-3">
             <Link
               to="/projects"
@@ -78,20 +73,20 @@ function Home() {
               View projects
               <ArrowRight className="size-4" aria-hidden />
             </Link>
+            <a
+              href={resumeUrl}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground"
+            >
+              View Resume
+            </a>
             <Link
               to="/contact"
               className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-5 py-2.5 text-sm font-semibold text-foreground transition-colors hover:bg-secondary"
             >
               Get in touch
             </Link>
-            <a
-              href={resumeUrl}
-              download
-              className="inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-accent-foreground transition-opacity hover:opacity-90"
-            >
-              <Download className="size-4" aria-hidden />
-              Download resume
-            </a>
           </div>
 
           <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm text-muted-foreground">
@@ -141,6 +136,23 @@ function Home() {
             </li>
           </ul>
         </div>
+      </section>
+
+      <section id="about" className="mt-24 scroll-mt-28">
+        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">About</p>
+
+        <h2 className="mt-3 font-display text-4xl font-semibold text-foreground">Who I Am</h2>
+
+        <p className="mt-6 max-w-4xl text-lg leading-8 text-muted-foreground">
+          Computer Science undergraduate with hands-on experience building responsive applications
+          and browser extensions using HTML, CSS, JavaScript, Python, React, and Node.js. I have
+          worked on projects across web development and cybersecurity, including ClickDefender, a
+          phishing detection Chrome extension, and a Netflix-inspired streaming application with
+          filtering, and persistent watchlist functionality. These projects have strengthened my
+          problem-solving, software development, DOM manipulation, and integration skills. I am
+          eager to continue learning, building practical solutions, and growing as a software
+          developer.
+        </p>
       </section>
 
       <section className="mt-16">
@@ -202,19 +214,21 @@ function Home() {
           ))}
         </div>
       </section>
-
-      <section className="mt-16 rounded-3xl border border-border bg-card p-6 shadow-[var(--shadow-soft)] sm:p-8">
-        <h2 className="font-display text-xl font-semibold text-foreground sm:text-2xl">
-          Recent highlights
+      <section className="mt-24 rounded-3xl border border-border bg-card p-8 text-center shadow-[var(--shadow-soft)] sm:p-10">
+        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">Contact</p>
+        <h2 className="mt-3 font-display text-2xl font-semibold text-foreground sm:text-3xl">
+          Let's Connect
         </h2>
-        <ul className="mt-5 space-y-3">
-          {achievements.map((item) => (
-            <li key={item} className="flex gap-3 text-sm leading-relaxed text-muted-foreground">
-              <span aria-hidden className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" />
-              {item}
-            </li>
-          ))}
-        </ul>
+        <p className="mx-auto mt-3 max-w-2xl text-muted-foreground">
+          I’m open to software development opportunities, collaborations, and exciting projects.
+        </p>
+        <Link
+          to="/contact"
+          className="mt-6 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+        >
+          Get in touch
+          <ArrowRight className="size-4" aria-hidden />
+        </Link>
       </section>
     </main>
   );

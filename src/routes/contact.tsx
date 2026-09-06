@@ -4,7 +4,6 @@ import { useServerFn } from "@tanstack/react-start";
 import { Github, Linkedin, Loader2, Mail, MapPin, Phone, Send } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
-
 import { PageShell } from "@/components/page-shell";
 import { profile } from "@/data/profile";
 import { contactSchema, submitContactMessage, type ContactInput } from "@/lib/contact.functions";
@@ -34,12 +33,10 @@ export const Route = createFileRoute("/contact")({
 });
 
 const emptyForm: ContactInput = { name: "", email: "", subject: "", message: "" };
-
 function Contact() {
   const [form, setForm] = useState<ContactInput>(emptyForm);
   const [errors, setErrors] = useState<Partial<Record<keyof ContactInput, string>>>({});
   const send = useServerFn(submitContactMessage);
-
   const mutation = useMutation({
     mutationFn: (data: ContactInput) => send({ data }),
     onSuccess: () => {
@@ -86,7 +83,7 @@ function Contact() {
     <PageShell
       eyebrow="Contact"
       title="Let's build something together"
-      intro="Whether it is an internship, a collaboration or a question about one of my projects — drop me a message and I will reply as soon as I can."
+      intro="Whether it’s a software development opportunity, collaboration, or a conversation about one of my projects, feel free to get in touch."
     >
       <div className="grid gap-8 lg:grid-cols-[1.3fr_1fr]">
         <form onSubmit={handleSubmit} className="surface-card p-6 sm:p-8" noValidate>
@@ -98,7 +95,7 @@ function Contact() {
               <input
                 id="name"
                 type="text"
-                placeholder="Jane Doe"
+                placeholder="Enter you name"
                 maxLength={100}
                 {...field("name")}
               />
@@ -113,7 +110,7 @@ function Contact() {
               <input
                 id="email"
                 type="email"
-                placeholder="jane@example.com"
+                placeholder="your_mail@example.com"
                 maxLength={255}
                 {...field("email")}
               />

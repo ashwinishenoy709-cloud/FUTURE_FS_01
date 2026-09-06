@@ -6,20 +6,28 @@ export const profile = {
   phone: "+91 9886106589",
   linkedin: "https://www.linkedin.com/in/ashwinishenoy09",
   github: "https://github.com/ashwinishenoy709-cloud",
-  summary:
-    "Computer Science undergraduate with hands-on experience building responsive web applications and browser extensions using HTML, CSS, JavaScript, Python, React, and Node.js. I have worked on projects across web development and cybersecurity, including ClickDefender, a phishing detection Chrome extension, and a Netflix-inspired streaming application with search, filtering, and persistent watchlist functionality. These projects have strengthened my problem-solving, software development, DOM manipulation, and API integration skills. I am eager to continue learning, building practical solutions, and growing as a software developer.",
 };
 
 export const skillGroups = [
-  { label: "Languages", items: ["C", "Python", "C++", "Java", "JavaScript"] },
-  { label: "Frontend", items: ["HTML5", "CSS3", "JavaScript", "Responsive Web Design"] },
   {
-    label: "Developer Tools",
-    items: ["VS Code", "Git", "GitHub", "Eclipse", "Jupyter Notebook", "IntelliJ IDEA"],
+    label: "Languages",
+    items: ["C", "Python", "C++", "Java", "JavaScript"],
+  },
+  {
+    label: "Frontend",
+    items: ["HTML5", "CSS3", "JavaScript", "Responsive Web Design"],
+  },
+  {
+    label: "Frameworks & Libraries",
+    items: ["React", "Node.js"],
   },
   {
     label: "Databases & Backend Services",
     items: ["MongoDB", "MySQL", "Supabase"],
+  },
+  {
+    label: "Developer Tools",
+    items: ["VS Code", "Git", "GitHub", "Eclipse", "Jupyter Notebook", "IntelliJ IDEA"],
   },
 ];
 

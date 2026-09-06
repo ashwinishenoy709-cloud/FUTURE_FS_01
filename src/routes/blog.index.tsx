@@ -28,7 +28,7 @@ function BlogIndex() {
     <PageShell
       eyebrow="Writing"
       title="Blog"
-      intro="Short write-ups on the projects I build, the bugs I chase and what I pick up along the way."
+      intro="Notes on my projects, development experiences, challenges, and what I learn along the way."
     >
       <div className="space-y-6">
         {blogPosts.map((post) => (

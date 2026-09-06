@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Download } from "lucide-react";
+import { useState } from "react";
 
 import { PageShell, Section } from "@/components/page-shell";
 import {
@@ -11,6 +12,9 @@ import {
   resumeUrl,
   skillGroups,
 } from "@/data/profile";
+
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Sparkles } from "lucide-react";
 
 export const Route = createFileRoute("/resume")({
   head: () => ({
@@ -37,8 +41,15 @@ export const Route = createFileRoute("/resume")({
 });
 
 function Resume() {
+  const [selectedCertificate, setSelectedCertificate] = useState<
+    (typeof certifications)[number] | null
+  >(null);
   return (
-    <PageShell eyebrow="Resume" title="Resume" intro={profile.summary}>
+    <PageShell
+      eyebrow="Resume"
+      title="Resume"
+      intro="An overview of my technical skills, projects, education, certifications, and achievements."
+    >
       <div className="flex flex-wrap items-center gap-3 rounded-3xl border border-border bg-card p-5 shadow-[var(--shadow-soft)]">
         <a
           href={resumeUrl}
@@ -49,7 +60,7 @@ function Resume() {
           Download PDF resume
         </a>
         <p className="text-sm text-muted-foreground">
-          Prefer a copy for your records? The PDF mirrors everything below.
+          View my experience below or download a PDF copy of my resume.
         </p>
       </div>
 
@@ -117,19 +128,30 @@ function Resume() {
         </ol>
       </Section>
 
-      <Section title="Certifications">
-        <ul className="grid gap-3 sm:grid-cols-2">
+      <section className="mt-12">
+        <h2 className="font-display text-xl font-semibold text-foreground">Certifications</h2>
+        <div className="mt-5 grid gap-5 sm:grid-cols-2">
           {certifications.map((cert) => (
-            <li key={cert.title} className="surface-card p-5 text-sm text-muted-foreground">
-              <span className="font-display text-base font-semibold text-foreground">
-                {cert.title}
+            <button
+              key={cert.title}
+              type="button"
+              onClick={() => setSelectedCertificate(cert)}
+              className="surface-card cursor-pointer p-6 text-left transition-all hover:-translate-y-1 hover:shadow-lg"
+            >
+              <span className="flex size-10 items-center justify-center rounded-full bg-blush text-blush-foreground">
+                <Sparkles className="size-5" aria-hidden />
               </span>
-              <br />
-              {cert.issuer} · {cert.year}
-            </li>
+              <h3 className="mt-4 font-display text-base font-semibold text-foreground">
+                {cert.title}
+              </h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {cert.issuer} · {cert.year}
+              </p>
+              <p className="mt-4 text-sm font-medium text-primary">View Certificate →</p>
+            </button>
           ))}
-        </ul>
-      </Section>
+        </div>
+      </section>
 
       <Section title="Achievements">
         <ul className="space-y-3">
@@ -141,6 +163,28 @@ function Resume() {
           ))}
         </ul>
       </Section>
+      <Dialog
+        open={selectedCertificate !== null}
+        onOpenChange={(open) => {
+          if (!open) setSelectedCertificate(null);
+        }}
+      >
+        <DialogContent className="max-h-[90vh] max-w-4xl overflow-auto">
+          {selectedCertificate && (
+            <>
+              <DialogHeader>
+                <DialogTitle>{selectedCertificate.title}</DialogTitle>
+              </DialogHeader>
+
+              <img
+                src={selectedCertificate.image}
+                alt={`${selectedCertificate.title} certificate`}
+                className="mt-4 h-auto w-full rounded-lg border border-border"
+              />
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </PageShell>
   );
 }

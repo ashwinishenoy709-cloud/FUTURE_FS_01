@@ -33,8 +33,8 @@ function Projects() {
   return (
     <PageShell
       eyebrow="Projects"
-      title="Things I have designed, built and shipped"
-      intro="Each project below started as a problem I wanted to understand properly — from phishing detection heuristics to state management in a streaming interface."
+      title="Projects I've Built"
+      intro="A collection of projects where I've applied my skills in web development, cybersecurity, and problem-solving."
     >
       {projects.map((project) => (
         <article key={project.slug} className="surface-card p-6 sm:p-8">
