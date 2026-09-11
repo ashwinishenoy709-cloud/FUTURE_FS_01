@@ -15,7 +15,7 @@ export const contactSchema = z.object({
 export type ContactInput = z.infer<typeof contactSchema>;
 
 export const submitContactMessage = createServerFn({ method: "POST" })
-  .inputValidator((data: unknown) => contactSchema.parse(data))
+  .validator((data: unknown) => contactSchema.parse(data))
   .handler(async ({ data }) => {
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
 
