@@ -1,5 +1,16 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Download, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import {
+  ArrowRight,
+  Download,
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  GraduationCap,
+  Laptop,
+  Sprout,
+} from "lucide-react";
 import { profile, projects, resumeUrl, skillGroups } from "@/data/profile";
 
 export const Route = createFileRoute("/")({
@@ -139,20 +150,112 @@ function Home() {
       </section>
 
       <section id="about" className="mt-24 scroll-mt-28">
-        <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">About</p>
+        <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_1.05fr]">
+          {/* LEFT — Who I Am */}
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary">About</p>
 
-        <h2 className="mt-3 font-display text-4xl font-semibold text-foreground">Who I Am</h2>
+            <h2 className="mt-3 font-display text-4xl font-semibold text-foreground">Who I Am</h2>
 
-        <p className="mt-6 max-w-4xl text-lg leading-8 text-muted-foreground">
-          Computer Science undergraduate with hands-on experience building responsive applications
-          and browser extensions using HTML, CSS, JavaScript, Python, React, and Node.js. I have
-          worked on projects across web development and cybersecurity, including ClickDefender, a
-          phishing detection Chrome extension, and a Netflix-inspired streaming application with
-          filtering, and persistent watchlist functionality. These projects have strengthened my
-          problem-solving, software development, DOM manipulation, and integration skills. I am
-          eager to continue learning, building practical solutions, and growing as a software
-          developer.
-        </p>
+            <p className="mt-6 text-lg leading-8 text-muted-foreground">
+              Computer Science undergraduate with hands-on experience building applications and
+              browser extensions using HTML, CSS, JavaScript, Python, React, and Node.js. I have
+              worked on projects across web development and cybersecurity, including ClickDefender,
+              a phishing detection Chrome extension, and a Netflix-inspired streaming application
+              application with filtering and persistent watchlist functionality. These projects have
+              strengthened my problem-solving, software development, DOM manipulation, and
+              integration skills. I am eager to continue learning, building practical solutions, and
+              growing as a software developer.
+            </p>
+          </div>
+
+          {/* RIGHT — Illustration + Quick Snapshot */}
+          <div className="flex w-full items-end justify-between gap-5">
+            {/* Character */}
+            <div className="flex flex-1 items-end justify-end">
+              <img
+                src="/Character.png"
+                alt="Developer illustration"
+                className="w-full max-w-[300px] object-contain"
+              />
+            </div>
+
+            {/* Quick Snapshot */}
+            <div
+              className="
+                ml-auto
+                w-[245px] shrink-0
+                lg:-mr-28
+                rounded-[26px]
+                border border-border/70
+                bg-background/85
+                p-5
+                shadow-md
+                backdrop-blur-md
+              "
+            >
+              <h3 className="font-display text-lg font-bold text-foreground">At a Glance</h3>
+
+              <div className="mt-5 space-y-5">
+                {/* Degree */}
+                <div className="flex items-start gap-3">
+                  <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-600 dark:bg-blue-400/15 dark:text-blue-300">
+                    <GraduationCap className="size-4" />
+                  </span>
+
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">Degree</p>
+                    <p className="mt-0.5 text-xs leading-5 text-muted-foreground">
+                      B.E. Computer Science & Engineering
+                    </p>
+                  </div>
+                </div>
+
+                {/* Location */}
+                <div className="flex items-start gap-3">
+                  <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-pink-100 text-pink-500 dark:bg-pink-400/15 dark:text-pink-300">
+                    <MapPin className="size-4" />
+                  </span>
+
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">Location</p>
+                    <p className="mt-0.5 text-xs leading-5 text-muted-foreground">
+                      Mangalore, Karnataka
+                    </p>
+                  </div>
+                </div>
+
+                {/* Focus */}
+                <div className="flex items-start gap-3">
+                  <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-violet-100 text-violet-500 dark:bg-violet-400/15 dark:text-violet-300">
+                    <Laptop className="size-4" />
+                  </span>
+
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">Focus</p>
+                    <p className="mt-0.5 text-xs leading-5 text-muted-foreground">
+                      Web Development & Cybersecurity
+                    </p>
+                  </div>
+                </div>
+
+                {/* Currently */}
+                <div className="flex items-start gap-3">
+                  <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-green-100 text-green-600 dark:bg-green-400/15 dark:text-green-300">
+                    <Sprout className="size-4" />
+                  </span>
+
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">Currently</p>
+                    <p className="mt-0.5 text-xs leading-5 text-muted-foreground">
+                      Building practical solutions
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className="mt-16">
