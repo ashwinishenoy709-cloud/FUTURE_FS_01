@@ -81,13 +81,25 @@ export const certifications = [
     title: "Python Programming",
     issuer: "Turbosoft Computer Academy",
     year: "2023",
-    image: "/certificates/python-programming.png",
+    image: "/certificates/python.jpeg",
   },
   {
     title: "C Programming",
     issuer: "Turbosoft Computer Academy",
     year: "2024",
-    image: "/certificates/c-programming.png",
+    image: "/certificates/c.jpeg",
+  },
+  // {
+  //   title: "Hackathon",
+  //   issuer: "Turbosoft Computer Academy",
+  //   year: "2025",
+  //   image: "/certificates/hackathon.png",
+  // },
+  {
+    title: "Mern Stack",
+    issuer: "Bootcamp conducted at college",
+    year: "2025",
+    image: "/certificates/mern.jpeg",
   },
 ];
 
